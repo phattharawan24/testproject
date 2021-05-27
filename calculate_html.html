@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="calculate_java.js"></script>
+</head>
+<style>
+  .body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  /*รถ*/
+  .carrun {
+    animation: carrun 10s infinite;
+  }
+
+  @keyframes carrun {
+    0% {
+      left: 0%;
+    }
+
+    100% {
+      left: 100%;
+    }
+  }
+
+  @keyframes moveAcross {
+    0% {
+      left: -300px;
+    }
+
+    100% {
+      left: 100%;
+    }
+  }
+
+  .thing-1 {
+    animation-delay: 1s;
+  }
+
+  .thing {
+    width: 100px;
+    position: relative;
+    left: 0;
+    animation: moveAcross 5s linear infinite;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+
+  .car {
+    animation-play-state: paused;
+  }
+
+  .carrun {
+    width: 100px;
+  }
+</style>
+
+<style>
+  /*ปุ่ม*/
+  .button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+    padding: 8px;
+  }
+
+  .button1:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+</style>
+<style>
+  /*จัดหน้าเพจ*/
+  .container_cal {
+    display: grid;
+    justify-content: center;
+    text-align: start;
+    background-color: #9ddfd3;
+    width: auto;
+  }
+
+  .boxcal {
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    text-align: start;
+  }
+
+  .evpic {
+    
+    width: 60px;
+    float:right;
+    position: absolute;
+    left: 1285px;
+    top: 230px;
+  }
+
+  .container_car {
+    float: left;
+    width: 120px;
+  }
+
+</style>
+<style>
+  /*กล่องข้อความ*/
+  input[type=text],[type="submit"] {
+    width: 10%;
+    padding: 5px 9px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+    background-color: lightblue;
+}
+
+</style>
+<body>
+  <div class="container_cal">
+    <div class="boxcal">
+      <p>
+      <h3>รู้หรือไม่...รถยนต์ระบบชาร์จไฟ <select name="gen" id="gen">
+          <option value="4" >PHEV</option>
+          <option value="4" >BEV</option>
+        </select>
+        สามารถรับไฟได้ <select id="kw">
+          <option value="3.7">3.7 kW</option>
+          <option value="7.4">7.4 kW</option>
+          <option value="11">11 kW</option>
+          <option value="22">22 kW</option>
+        </select>
+        และชาร์จไฟจำนวน <input type="text" name="num1" id="num1"> ชั่วโมง
+        <input type="submit" value="calculate" onclick="calculate()" class="button1"><br>
+        "คุณจะเสียเงินในการชาร์จ <input type="text" disabled name="" id="hour"> บาท" และ รถสามารถวิ่งได้ <input
+          type="text" name="drive" id="drive" disabled> km"
+      </h3>
+      </p>
+      <p>*ค่าชาร์จไฟรถ EV ประมาณ 0.7-1 บาท/กิโลเมตร เมื่อเทียบค่าเติมน้ำมันรถทั่วไปประมาณ 3 บาท/กิโลเมตร
+        ทำให้สามารถประหยัดค่าเชื้อเพลิงรถไปได้มากกว่า 3 เท่า</p>
+    </div> 
+    <img src="https://sv1.picz.in.th/images/2021/05/27/PPHyDt.png" alt="PPHyDt.png" border="0" class="evpic" >
+      <div id="divCar" class="container_car"><img src="https://sv1.picz.in.th/images/2021/05/27/PPKInt.png" alt="PPKInt.png"
+          border="0" class="carrun">
+    </div>
+</body>
+
+</html>
